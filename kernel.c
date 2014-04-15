@@ -5,7 +5,7 @@
 
 void kmain(void)
 {
-	char *str = "my first kernel";
+	char *str = "Hello Kernel!";
 	//video memory begins at address 0xb8000
 	char *vidptr = (char*)0xb8000;
 	unsigned int i = 0;
@@ -28,7 +28,7 @@ void kmain(void)
 		//the character's ascii
 		vidptr[i] = str[j];
 		//attribute-byte: give character black bg and-light grey fg
-		vidptr[i+1] = 0x07;
+		vidptr[i+1] = 0x02;
 		++j;
 		i = i + 2;
 	}
